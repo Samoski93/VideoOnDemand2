@@ -10,6 +10,6 @@ namespace VideoOnDemand.UI.Models.MembershipViewModels
     {
         public CourseDTO Course { get; set; }
         public InstructorDTO Instructor { get; set; }
-        public IEnumerable<ModuleDTO> ModuleDTOs { get; set; }
+        public IEnumerable<ModuleDTO> Modules { get; set; }
     }
 }
