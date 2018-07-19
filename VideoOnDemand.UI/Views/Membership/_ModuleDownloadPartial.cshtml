@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DownloadDTO>
+
+@foreach (var download in Model)
+{
+    <li>
+        <a href="@download.DownloadUrl" target="_blank">
+            <span class="glyphicon glyphicon-download-alt"></span>
+            &nbsp;@download.DownloadUrl
+        </a>
+    </li>
+}

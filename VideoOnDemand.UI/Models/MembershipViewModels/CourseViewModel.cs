@@ -6,7 +6,7 @@ using VideoOnDemand.UI.Models.DTOModels;
 
 namespace VideoOnDemand.UI.Models.MembershipViewModels
 {
-    public class CourseModelView
+    public class CourseViewModel
     {
         public CourseDTO Course { get; set; }
         public InstructorDTO Instructor { get; set; }

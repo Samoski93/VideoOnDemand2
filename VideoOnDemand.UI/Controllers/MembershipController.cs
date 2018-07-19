@@ -90,7 +90,7 @@ namespace VideoOnDemand.UI.Controllers
 
             // Instance of CourseViewModel : three mapped collections: mappedCourseDTOs, mappedInstructorDTO, and mappedModuleDTOs 
             // mapped to courseModel object’s Course, Instructor, and Modules properties.
-            var courseModel = new CourseModelView
+            var courseModel = new CourseViewModel
             {
                 Course = mappedCourseDTOs,
                 Instructor = mappedInstructorDTO,

@@ -1,0 +1,67 @@
+﻿@model CourseViewModel
+
+@{
+    ViewData["Title"] = "Course";
+}
+
+<h2>Course</h2>
+
+<div class="membership top-margin course-content">
+    <div class="row navigation-bar">
+        <div class="col-sm-12">
+            <a href="~/Membership/Dashboard">
+                <span class="glyphicon glyphicon-menu-left"></span>
+                Back to Dashboard
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel">
+                <div class="marquee" style="background-image: url('@Model.Course.MarqueeImageUrl')">
+                    <img src="@Model.Course.CourseImageUrl" class="cover-image" />
+                </div>
+                <div class="panel-body">
+                    <h1>@Model.Course.CourseTitle</h1>
+                    <h4 class="product-desc">@Model.Course.CourseDescription</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Adding columns for the Modules and the Instructor Bio -->
+    <div class="row">
+        <div class="col-sm-9">
+            <!-- Iterates over the view models collection -->
+            @foreach (var module in Model.Modules)
+            {
+                <!-- Craete a module container for each module-->
+                <div class="panel module">
+                    <div class="panel-body">
+                        <h5> @Model.Course.CourseTitle</h5>
+                    </div>
+                     <!-- Check that the current module video collection is not empty -->
+                        @if (module.Videos != null)
+                        {
+                            @await Html.PartialAsync("_ModuleVideosPartial", module.Videos)
+                        }
+
+                        <!-- Check that the current module download collection is not empty -->
+                        @if (module.Downloads != null)
+                        {
+                            <hr class="no-margin" />
+                            <div class="panel-body download-panel">
+                                <h5>Downloads</h5>
+                                @await Html.PartialAsync("_ModuleDownloadsPartial", module.Downloads)
+                            </div>
+                        }
+                </div>
+            }
+        </div>
+        <div class="col-sm-3">
+            @if (Model.Instructor != null)
+            {
+                @await Html.PartialAsync("_InstructorBioPartial", Model.Instructor)
+            }
+        </div>
+    </div>
+</div>

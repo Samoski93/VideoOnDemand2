@@ -7,7 +7,11 @@
     "inputFiles": [
       "wwwroot/css/site.css",
       "wwwroot/css/login.css",
-      "wwwroot/css/menu.css"
+      "wwwroot/css/menu.css",
+      "wwwroot/css/memebership.css",
+      "wwwroot/css/course-panel.css",
+      "wwwroot/css/course.css",
+      "wwwroot/css/module.css"
     ]
   },
   {

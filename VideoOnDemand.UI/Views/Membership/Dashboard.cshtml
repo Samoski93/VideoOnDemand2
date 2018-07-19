@@ -6,5 +6,21 @@
 
 <div class="membership top-margin">
     <h2 class="text-dark">Dashboard</h2>
+
+    <hr class="thick margin" />
+
+    <!-- To display the courses three to a row, you have to add two foreach loops to the view.
+        The outer loop iterates over the Courses collection (the parent collection) to create the rows,
+        and the inner loop iterates over the (three) courses on that row.
+    -->
+    @foreach (var dashboardRow in Model.Courses)
+    {
+        <div class="row">
+            @foreach (var course in dashboardRow)
+            {
+                <h4>@course.CourseTitle</h4>
+            }
+        </div>
+    }
 </div>
 
