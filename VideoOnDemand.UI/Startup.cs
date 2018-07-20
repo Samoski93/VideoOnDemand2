@@ -9,6 +9,7 @@ using VideoOnDemand.Data.Data;
 using VideoOnDemand.Data.Data.Entities;
 using VideoOnDemand.UI.Repositories;
 using VideoOnDemand.UI.Models.DTOModels;
+using VideoOnDemand.Data.Migrations;
 
 namespace VideoOnDemand.UI
 {
@@ -84,7 +85,7 @@ namespace VideoOnDemand.UI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, VODContext db)
         {
             if (env.IsDevelopment())
             {
@@ -96,6 +97,9 @@ namespace VideoOnDemand.UI
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            // add the seed data when the application is started.
+            DbInitializer.Initialize(db);
 
             app.UseStaticFiles();
 

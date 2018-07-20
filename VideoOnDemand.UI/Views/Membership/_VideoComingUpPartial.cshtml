@@ -1,0 +1,61 @@
+﻿@model LessonInfoDTO
+<!-- checks that one of the PreviousVideoId or NextVideoId properties has a value greater than 0.
+    If both are 0 then there are no other videos in the module, and the Coming Up section shouldn’t be displayed. -->
+@if (Model.PreviousVideoId > 0 || Model.NextVideoId > 0)
+{
+    <div class="panel coming-up">
+        <!-- Display a thumbnail for the current video, in the panel, if the NextVideoId property is 0, otherwise display the thumbnail for the next video.
+            Use the CurrentVideoThumbnail and NextVideoThumbnail properties from the view model to display the correct image. -->
+        @if (Model.NextVideoId == 0)
+        {
+            <img src="@Model.CurrentVideoThumbnail"
+                 class="img-responsive">
+        }
+        else
+        {
+            <img src="@Model.NextVideoThumbnail" class="img-responsive">
+        }
+
+        <div class="panel-body">
+            @if (Model.NextVideoId == 0)
+            {
+                <p>COURSE COMPLETED</p>
+                <h5>@Model.CurrentVideoTitle</h5>
+            }
+            else
+            {
+                <p>COMING UP</p>
+                <h5>@Model.NextVideoTitle</h5>
+            }
+
+            <div class="btn-group" role="group">
+                @if (Model.PreviousVideoId == 0)
+                {
+                    <a class="btn btn-default" disabled href="#">
+                        Previous
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-default"
+                       href="~/Membership/Video/@Model.PreviousVideoId">
+                        Previous
+                    </a>
+                }
+                @if (Model.NextVideoId == 0)
+                {
+                    <a class="btn btn-default" disabled href="#">
+                        Next
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-default"
+                       href="~/Membership/Video/@Model.NextVideoId">
+                        Next
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+}
