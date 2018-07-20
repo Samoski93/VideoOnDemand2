@@ -35,7 +35,7 @@ namespace VideoOnDemand.UI.Controllers
 
         // GET: /<controller>/
         [HttpGet]
-        public IActionResult Dashbosrd()
+        public IActionResult Dashboard()
         {
             // Fetch all courses for the User and Convert them into CourseDTO objects
             var courseDtoObjects = _mapper.Map<List<CourseDTO>>(_db.GetCourses(_userId));
