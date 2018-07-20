@@ -109,10 +109,8 @@ namespace VideoOnDemand.UI.Repositories
             // The course objects have an instructor id, and the modules have a course id assigned to them.
             foreach (var course in courses)
             {
-                course.Instructor = _instructors.SingleOrDefault(
-                    s => s.Id.Equals(course.InstructorId));
-                course.Modules = _modules.Where(
-                    m => m.CourseId.Equals(course.Id)).ToList();
+                course.Instructor = _instructors.SingleOrDefault(s => s.Id.Equals(course.InstructorId));
+                course.Modules = _modules.Where(m => m.CourseId.Equals(course.Id)).ToList();
             }
 
             return courses;
@@ -123,8 +121,8 @@ namespace VideoOnDemand.UI.Repositories
         {
             // Fetch a single course using _userCourses and _courses list
             var course = _userCourses.Where(uc => uc.UserId.Equals(userId))
-                .Join(_courses, uc => uc.CourseId, c => c.Id, (uc, c) => new { Course = c })
-                .SingleOrDefault(s => s.Course.Id.Equals(courseId)).Course;
+                 .Join(_courses, uc => uc.CourseId, c => c.Id, (uc, c) => new { Course = c })
+                 .SingleOrDefault(s => s.Course.Id.Equals(courseId)).Course;
 
             // fetch the instructor and assign the result to the Instructor property. Use the InstructorId property in the course object.
             course.Instructor = _instructors.SingleOrDefault(s => s.Id.Equals(course.InstructorId));
