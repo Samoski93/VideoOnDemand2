@@ -10,6 +10,7 @@ using VideoOnDemand.Data.Data.Entities;
 using VideoOnDemand.UI.Repositories;
 using VideoOnDemand.UI.Models.DTOModels;
 using VideoOnDemand.Data.Migrations;
+using VideoOnDemand.Data.Services;
 
 namespace VideoOnDemand.UI
 {
@@ -36,9 +37,13 @@ namespace VideoOnDemand.UI
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
+            // 
+            services.AddTransient<IDbReadService, DbReadService>();
+
             // Add Application Services
             // To be able to inject objects from classes created (Add service mapping), specify what class will be used to serve up the objects
-            services.AddSingleton<IReadRepository, MockReadRepository>();
+            // services.AddSingleton<IReadRepository, MockReadRepository>();
+            services.AddScoped<IReadRepository, SqlReadRepository>();
 
             services.AddMvc();
 
