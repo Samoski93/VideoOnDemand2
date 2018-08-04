@@ -141,5 +141,22 @@ namespace VideoOnDemand.Data.Services
             var items = Get<TEntity>();
             return new SelectList(items, valueField, textField);
         }
+
+        /// <summary>
+        /// Returns the necessary statistics for the dashboard from the database.
+        /// display the number of records stored in the entity tables in the database on the cards,
+        /// the method return a tuple containing the values.
+        /// </summary>
+        public (int courses, int downloads, int instructors, int modules, int videos, int users, int userCourses) Count()
+        {
+            return (
+                courses: _db.Courses.Count(),
+                downloads: _db.Downloads.Count(),
+                instructors: _db.Instructors.Count(),
+                modules: _db.Modules.Count(),
+                videos: _db.Videos.Count(),
+                users: _db.Users.Count(),
+                userCourses: _db.UserCourses.Count());
+        }
     }
 }

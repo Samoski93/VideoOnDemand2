@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<br />
+
+<div class=" row">
+    <div class="class=" col-xs-offset-2 col-sm-8 col-sm-offset-3 col-md-6 col-md-offset-4"">
+        @await Html.PartialAsync("_CardPartial", Model.Cards.instructors)
+        @await Html.PartialAsync("_CardPartial", Model.Cards.users)
+    </div>
+</div>

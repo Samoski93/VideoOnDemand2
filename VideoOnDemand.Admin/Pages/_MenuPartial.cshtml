@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using VideoOnDemand.Data.Data.Entities
+@inject SignInManager<User> SignInManager
+
+<!-- first check if the user is signed in and IsInRole method on the User entity to check that the user belongs to the Admin role -->
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+    <ul class="nav navbar-nav">
+        <li><a asp-page="/Index">Dashboard</a></li>
+    </ul>
+}

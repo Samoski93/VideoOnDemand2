@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoOnDemand.UI", "VideoOnDemand.UI\VideoOnDemand.UI.csproj", "{86F261F3-25C7-4C66-9746-E1C63B82065C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoOnDemand.UI", "VideoOnDemand.UI\VideoOnDemand.UI.csproj", "{86F261F3-25C7-4C66-9746-E1C63B82065C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoOnDemand.Data", "VideoOnDemand.Data\VideoOnDemand.Data.csproj", "{CAD2E8F9-A260-4EDE-9DA2-2797D8811427}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoOnDemand.Data", "VideoOnDemand.Data\VideoOnDemand.Data.csproj", "{CAD2E8F9-A260-4EDE-9DA2-2797D8811427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoOnDemand.Admin", "VideoOnDemand.Admin\VideoOnDemand.Admin.csproj", "{0FC0DE65-D6B3-4403-A2F0-0EC671CE303E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CAD2E8F9-A260-4EDE-9DA2-2797D8811427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAD2E8F9-A260-4EDE-9DA2-2797D8811427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAD2E8F9-A260-4EDE-9DA2-2797D8811427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC0DE65-D6B3-4403-A2F0-0EC671CE303E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC0DE65-D6B3-4403-A2F0-0EC671CE303E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC0DE65-D6B3-4403-A2F0-0EC671CE303E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC0DE65-D6B3-4403-A2F0-0EC671CE303E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
